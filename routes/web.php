@@ -18,22 +18,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::namespace('Tasks')->middleware('localization')->group(function (){
-
+Route::namespace('Tasks')->middleware('auth')->group(function (){
     Route::get('/tasks',[
         'uses' => 'TasksController@getTasks',
-        'as' => 'tasks.add',
-    ]);
+        'as' => 'tasks.index',
+    ])->middleware('localization');
 
     Route::post('/tasks',[
         'uses' => 'TasksController@postTasks',
         'as' => 'tasks.add',
-    ]);
+    ])->middleware('localization');
 
     Route::get('/task{id}',[
         'uses' => 'TasksController@deleteTasks',
         'as' => 'tasks.delete',
-    ]);
+    ])->middleware('localization');
 });
 
 Route::namespace('Lang')->group(function (){
@@ -45,10 +44,20 @@ Route::namespace('Lang')->group(function (){
 
 });
 
-Route::namespace('Login')->group(function (){
+Route::namespace('Login')->middleware('localization')->group(function (){
 
     Route::get('/login',[
         'uses' => 'LoginController@getLogin',
+        'as' => 'login',
+    ]);
+
+    Route::post('/login',[
+        'uses' => 'LoginController@postLogin',
         'as' => 'auth.login',
-    ])->middleware('localization');
+    ]);
+
+    Route::get('logout',[
+        'uses'=>'LoginController@logOut',
+        'as'=>'auth.logout'
+    ]);
 });
