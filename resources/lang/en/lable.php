@@ -16,5 +16,8 @@ return [
     'Dashboard' =>'Dashboard',
     'You_are_logged_in'=>'You are logged in!',
     'Hello'=>'Hello',
+    'Delete'=>'Delete',
+    'Successful_add' =>'Add Successful',
+    'Error' => 'Error',
+    'Successful_delete' =>'Delete Successful',
 ];
-

@@ -16,5 +16,7 @@ return [
     'Dashboard' =>'Bảng điều khiển',
     'You_are_logged_in'=>'Bạn đã đăng nhập',
     'Hello'=>'Chào',
+    'Delete'=>'Xóa',
+    'Successful_add' =>'Thêm thành công',
+    'Error' => 'Có lỗi khi thêm',
 ];
-

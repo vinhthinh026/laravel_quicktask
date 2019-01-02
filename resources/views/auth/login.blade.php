@@ -7,8 +7,7 @@
                 <div class="card-header">@lang('lable.login')</div>
 
                 <div class="card-body">
-                    {!! Form::open(['method'=> 'POST', 'route'=> ['tasks.add'] ]) !!}
-
+                    {!! Form::open(['method'=> 'POST', 'route'=> ['auth.login'] ]) !!}
                         <div class="form-group row">
                             {!! Form::label( 'username', trans('lable.username'), ['class'=>'col-md-4 col-form-label text-md-right']) !!}
 
